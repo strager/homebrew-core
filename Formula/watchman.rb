@@ -3,7 +3,7 @@ class Watchman < Formula
   homepage "https://github.com/facebook/watchman"
   url "https://github.com/facebook/watchman/archive/v4.9.0.tar.gz"
   sha256 "1f6402dc70b1d056fffc3748f2fdcecff730d8843bb6936de395b3443ce05322"
-  head "https://github.com/facebook/watchman.git"
+  head "/Users/mg/Projects/watchman/.git", :branch => "folly", :using => :git
 
   bottle do
     sha256 "41484c1bd9660d1dc3a269da0f604ae4e4358861a7d6da7e217840a8e60973f8" => :high_sierra
@@ -13,6 +13,7 @@ class Watchman < Formula
   end
 
   depends_on :macos => :yosemite # older versions don't support fstatat(2)
+  depends_on "folly"
   depends_on "python@2"
   depends_on "autoconf" => :build
   depends_on "automake" => :build
