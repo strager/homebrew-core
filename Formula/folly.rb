@@ -3,7 +3,7 @@ class Folly < Formula
   homepage "https://github.com/facebook/folly"
   url "https://github.com/facebook/folly/archive/v2018.07.09.00.tar.gz"
   sha256 "75e3d716ecb9bfcf60f4cb83bf47e5821412b2f908566599707b3b08c55f31d0"
-  head "https://github.com/facebook/folly.git"
+  head "/Users/mg/tmp/Projects/folly2/.git", :using => :git
 
   bottle do
     cellar :any
@@ -26,8 +26,7 @@ class Folly < Formula
   depends_on "lz4"
   depends_on "openssl"
 
-  # https://github.com/facebook/folly/issues/451
-  depends_on :macos => :el_capitan
+  depends_on :macos => :yosemite
 
   needs :cxx11
 
